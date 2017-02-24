@@ -5,6 +5,7 @@ int main()
   int n;
   int *a;
   int hash[100000] = {0};
+  int visited = 0;
   scanf("%d",&n);
   a = (int*)malloc(sizeof(int)*n);
   for(int i=0;i<n;i++)
@@ -13,9 +14,11 @@ int main()
   {
     if(hash[a[i]]>1)
     {
+      visited = 1;
       printf("%d ",a[i]);
       hash[a[i]] = 0;
     }
   }
+  if(!visited) printf("0");
   return 0;
 }
